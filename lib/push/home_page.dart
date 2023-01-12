@@ -17,14 +17,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     FirebaseMessaging.onMessage.listen((RemoteMessage msg) {
       debugPrint("Messages");
-
       print("Message : $msg");
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(msg.notification!.title?? ''
           ),
-        ),
-      );
+        ),);
+
+
     });
     // getToken();
     // initmsg();

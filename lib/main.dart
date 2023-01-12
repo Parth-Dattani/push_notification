@@ -26,10 +26,10 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   //     });
 }
 
-Future<void> _firdf( RemoteMessage msg)async{
-  await Firebase.initializeApp;
-  print('Handling a foreground message ${msg.messageId}');
-}
+// Future<void> _firdf( RemoteMessage msg)async{
+//   await Firebase.initializeApp;
+//   print('Handling a foreground message ${msg.messageId}');
+// }
 
 
 void main() async{
@@ -97,4 +97,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

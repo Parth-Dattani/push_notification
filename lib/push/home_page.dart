@@ -69,7 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     FirebaseMessaging.onMessage.listen((RemoteMessage msg) {
       debugPrint("Messages");
-      print("Message : $msg");
       print("Message : ${msg.notification!.body}");
 
       AwesomeNotifications().createNotification(
@@ -81,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
             bigPicture: "https://media.istockphoto.com/id/1194343598/vector/bright-modern-mega-sale-banner-for-advertising-discounts-vector-template-for-design-special.jpg?s=612x612&w=0&k=20&c=oxeukxA1kVLBuLtcbipu_94blsVGs9eU0V_x70wkVzA=",
             notificationLayout: NotificationLayout.BigPicture
         ),
-
       );
 
       // ScaffoldMessenger.of(context).showSnackBar(

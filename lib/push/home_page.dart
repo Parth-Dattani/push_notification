@@ -87,12 +87,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
       );
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(msg.notification!.title?? ''
-          ),
-        ),
-      );
+      // ScaffoldMessenger.of(context).showSnackBar(
+      //   SnackBar(
+      //     content: Text(msg.notification!.title?? ''
+      //     ),
+      //   ),
+      // );
     });
     // getToken();
     // initmsg();

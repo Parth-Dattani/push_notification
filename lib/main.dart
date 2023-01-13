@@ -69,9 +69,7 @@ void main() async{
     provisional: false
   );
 
-
-
-
+  //try this condition for when u did not receiving notification
   if(settings.authorizationStatus == AuthorizationStatus.authorized){
     print("Permission Granted");
   }

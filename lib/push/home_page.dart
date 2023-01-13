@@ -71,9 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
       debugPrint("Messages");
       print("Message : $msg");
       print("Message : ${msg.notification!.body}");
-      print("Message : ${msg.notification!.body.toString()}");
-      print("Message : ${msg.data.keys}");
-      print("Message : ${msg.data.values}");
 
       AwesomeNotifications().createNotification(
         content: NotificationContent(

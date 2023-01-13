@@ -1,12 +1,16 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:push_notification/push/home_page.dart';
 
+import 'notification_service.dart';
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
    final navKey = GlobalKey<NavigatorState>();
   await Firebase.initializeApp;
   print('Handling a background message ${message.messageId}');
+
     //showDialogIfFirstLoaded(context);
   // showDialog(
   //     context: context,
@@ -34,6 +38,24 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+
+  AwesomeNotifications().initialize(
+      null,
+      [
+        NotificationChannel(
+          channelKey: 'channelKey1',
+          channelName: 'Notification',
+          channelDescription: 'channelDescription demo',
+          ledColor: Colors.red,
+          defaultColor: Colors.teal,
+          playSound: true,
+          enableVibration: true,
+          soundSource: 'resource://raw/res_custom_notification',
+          //soundSource: 'resource://raw/whistle',
+        )
+      ]
+  );
+
   await Firebase.initializeApp();
 
   FirebaseMessaging messaging = await FirebaseMessaging.instance;
@@ -46,6 +68,9 @@ void main() async{
     criticalAlert: false,
     provisional: false
   );
+
+
+
 
   if(settings.authorizationStatus == AuthorizationStatus.authorized){
     print("Permission Granted");
